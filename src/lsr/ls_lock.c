@@ -120,7 +120,7 @@ int ls_pthread_mutex_setup(pthread_mutex_t *p)
     pthread_mutexattr_t myAttr;
     pthread_mutexattr_init(&myAttr);
 #if defined(USE_MUTEX_ADAPTIVE)
-    pthread_mutexattr_settype(&myAttr, PTHREAD_MUTEX_ADAPTIVE_NP);
+    pthread_mutexattr_settype(&myAttr, PTHREAD_MUTEX_NORMAL);
 #else  /* defined(USE_MUTEX_ADAPTIVE) */
     /* pthread_mutexattr_settype(&myAttr, PTHREAD_MUTEX_NORMAL); */
     pthread_mutexattr_settype(&myAttr,

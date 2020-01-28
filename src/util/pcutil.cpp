@@ -30,7 +30,7 @@
 #endif
 
 #ifdef __FreeBSD__
-#include <sys/sysctl.h>
+#include <linux/sysctl.h>
 #include <sys/param.h>
 #include <sys/cpuset.h>
 #endif

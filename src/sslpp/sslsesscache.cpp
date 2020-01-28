@@ -44,7 +44,7 @@ typedef struct SslSessData_s
 {
     int32_t             x_iExpireTime;
     uint32_t            x_iValueLen;
-    u_int8_t            x_sessionData[0];
+    uint8_t            x_sessionData[0];
 } SslSessData_t;
 
 static int checkStatElem(LsShmHash::iteroffset iIterOff, void *pData);

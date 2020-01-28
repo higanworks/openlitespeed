@@ -136,7 +136,7 @@ typedef  THash<static_file_data_t *> UrlStxFileHash;
 typedef struct _url_id_data
 {
     AutoStr2 url;
-    u_int32_t  id;
+    uint32_t  id;
 } url_id_data_t;
 
 /**

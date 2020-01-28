@@ -26,7 +26,7 @@
 #elif defined(macintosh) || defined(__APPLE__) || defined(__APPLE_CC__)
 #include <mach/mach_init.h>
 #include <mach/thread_policy.h>
-#include <sys/sysctl.h>
+#include <linux/sysctl.h>
 #define cpu_set_t thread_affinity_policy_data_t
 #define CPU_SET(cpu_id, new_mask) \
     (*(new_mask)).affinity_tag = (cpu_id + 1)

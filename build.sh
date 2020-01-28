@@ -541,6 +541,7 @@ cd ../../../
 fixshmdir
 set -e
 cmake .
+exit 0
 make
 cp src/openlitespeed  dist/bin/
 set +x

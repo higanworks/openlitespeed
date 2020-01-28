@@ -222,9 +222,9 @@ private:
     static void luaLineHookCb(lua_State *L, lua_Debug *ar);
     inline void upLuaCounter()
     { m_iLuaLineCount++; }
-    u_int32_t m_iLuaLineCount;    // counter how many time this got called
+    uint32_t m_iLuaLineCount;    // counter how many time this got called
 public:
-    u_int32_t getLuaCounter()
+    uint32_t getLuaCounter()
     { return m_iLuaLineCount; }
 };
 

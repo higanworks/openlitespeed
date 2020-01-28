@@ -42,7 +42,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 #ifdef __FreeBSD__
-#include <sys/sysctl.h>
+#include <linux/sysctl.h>
 #endif
 
 #include <ls_sendmmsg.h>

@@ -52,7 +52,7 @@
 #include <util/httpfetch.h>
 #include <socket/gsockaddr.h>
 
-#include <sys/sysctl.h>
+#include <linux/sysctl.h>
 
 #include <extensions/cgi/cgidworker.h>
 #include <extensions/registry/extappregistry.h>
@@ -1794,7 +1794,7 @@ static int parseChildCmd(const char *pAction)
 #if defined(__FreeBSD__ ) || defined(__NetBSD__) || defined(__OpenBSD__) \
     || defined(macintosh) || defined(__APPLE__) || defined(__APPLE_CC__)
 #include <sys/types.h>
-#include <sys/sysctl.h>
+#include <linux/sysctl.h>
 #include <sys/user.h>
 static long getProcessStartTime(int pid)
 {

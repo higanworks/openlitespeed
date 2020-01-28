@@ -49,23 +49,23 @@
 
 struct signalfd_siginfo
 {
-    u_int32_t ssi_signo;
+    uint32_t ssi_signo;
     int32_t ssi_errno;
     int32_t ssi_code;
-    u_int32_t ssi_pid;
-    u_int32_t ssi_uid;
+    uint32_t ssi_pid;
+    uint32_t ssi_uid;
     int32_t ssi_fd;
-    u_int32_t ssi_tid;
-    u_int32_t ssi_band;
-    u_int32_t ssi_overrun;
-    u_int32_t ssi_trapno;
+    uint32_t ssi_tid;
+    uint32_t ssi_band;
+    uint32_t ssi_overrun;
+    uint32_t ssi_trapno;
     int32_t ssi_status;
     int32_t ssi_int;
-    u_int64_t ssi_ptr;
-    u_int64_t ssi_utime;
-    u_int64_t ssi_stime;
-    u_int64_t ssi_addr;
-    u_int8_t __pad[48];
+    uint64_t ssi_ptr;
+    uint64_t ssi_utime;
+    uint64_t ssi_stime;
+    uint64_t ssi_addr;
+    uint8_t __pad[48];
 };
 
 static inline int signalfd(int ufc, sigset_t const *mask, int flag)

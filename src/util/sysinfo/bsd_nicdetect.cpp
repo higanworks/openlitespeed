@@ -18,7 +18,7 @@
 #include    <net/if_dl.h>        /* sockaddr_sdl{} */
 #include    <net/route.h>        /* RTA_xxx constants */
 #include    <sys/param.h>
-#include    <sys/sysctl.h>        /* sysctl() */
+#include    <linux/sysctl.h>        /* sysctl() */
 
 #include    <lsr/ls_strtool.h>
 

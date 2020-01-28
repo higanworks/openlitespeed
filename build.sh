@@ -295,7 +295,7 @@ prepareLinux()
         ${APP_MGR_CMD} add gcc g++
         ${APP_MGR_CMD} add patch
         installCmake
-        ${APP_MGR_CMD} add git libtool linux-headers bsd-compat-headers
+        ${APP_MGR_CMD} add git libtool linux-headers bsd-compat-headers curl
         ${APP_MGR_CMD} add automake autoconf
         ${APP_MGR_CMD} add build-base expat-dev zlib-dev
         installgo
@@ -441,7 +441,9 @@ updateModuleCMakelistfile()
     fi
     
     if [ "${ISLINUX}" = "yes" ] ; then
-        echo "add_subdirectory(pagespeed)" >> src/modules/CMakeLists.txt
+        if [ ! "${OSTYPE}" = "ALPINE" ] ; then
+            echo "add_subdirectory(pagespeed)" >> src/modules/CMakeLists.txt
+        fi
     
     fi
     
@@ -545,7 +547,6 @@ cd ../../../
 fixshmdir
 set -e
 cmake .
-exit 0
 make
 cp src/openlitespeed  dist/bin/
 set +x

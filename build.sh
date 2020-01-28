@@ -419,6 +419,10 @@ updateSrcCMakelistfile()
         sed -i -e "s/-Wl,--whole-archive//g"  src/CMakeLists.txt
         sed -i -e "s/-Wl,--no-whole-archive//g"  src/CMakeLists.txt
     fi
+
+    if [ "${OSTYPE}" = "ALPINE" ] ; then
+        sed -i -e "s/c_nonshared//g"  src/CMakeLists.txt
+    fi
     
 }
 

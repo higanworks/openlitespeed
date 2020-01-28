@@ -449,7 +449,7 @@ AC_FUNC_LSTAT_FOLLOWS_SLASHED_SYMLINK
 #AC_FUNC_MALLOC disable due to this replacing malloc() with non-existing rpl_malloc() issue on some systems
 AC_FUNC_MMAP
 AC_FUNC_REALLOC
-AC_CHECK_FUNCS(malloc bzero dup2 ftruncate getcwd gethostbyaddr gethostbyname gettimeofday inet_ntoa localtime_r memchr memmove memset mkdir munmap select socket strcasecmp strchr strcspn strdup strerror strncasecmp strpbrk strrchr strspn strstr strtol)
+AC_CHECK_FUNCS(malloc bzero dup2 ftruncate getcwd gethostbyaddr gethostbyname gettimeofday inet_ntoa localtime_r memchr memmove memset mkdir munmap select socket strcasecmp strchr strcspn strdup strerror strncasecmp strpbrk strrchr strspn strstr strtol pthread_attr_setaffinity_np)
 
 RT_LIB_OPTION=" -lrt" 
 DL_LIB_OPTION=" -ldl"

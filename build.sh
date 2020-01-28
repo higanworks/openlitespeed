@@ -299,9 +299,11 @@ prepareLinux()
         ${APP_MGR_CMD} add automake autoconf
         ${APP_MGR_CMD} add build-base expat-dev zlib-dev
         installgo
-        sed -i.org 's/u_int32_t/uint32_t/g' $(grep -rl u_int32_t src/)
-        sed -i.org 's/u_int64_t/uint64_t/g' $(grep -rl u_int64_t src/)
-        sed -i.org 's/u_int8_t/uint8_t/g' $(grep -rl u_int8_t src/)
+        sed -i -e "s/u_int32_t/uint32_t/g" $(grep -rl u_int32_t src/)
+        sed -i -e "s/u_int64_t/uint64_t/g" $(grep -rl u_int64_t src/)
+        sed -i -e "s/u_int8_t/uint8_t/g" $(grep -rl u_int8_t src/)
+        sed -i -e "s@<sys/sysctl.h>@<linux/sysctl.h>@g" $(grep -rl "<sys/sysctl.h>" src/)
+        sed -i -e "s/PTHREAD_MUTEX_ADAPTIVE_NP/PTHREAD_MUTEX_NORMAL/g" src/lsr/ls_lock.c
     else 
         echo May not support your platform, but we can do a try to install some tools.
         ${APP_MGR_CMD} -y update
